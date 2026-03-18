@@ -221,7 +221,7 @@ export default function Dashboard({ embedded = false }: { embedded?: boolean }) 
                 </div>
                 <ResponsiveContainer width="100%" height={200}>
                   <PieChart>
-                    <Pie data={startupPieData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
+                    <Pie data={startupPieData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80} label={({ name, percent }) => `${name} ${((percent ?? 0) * 100).toFixed(0)}%`}>
                       {startupPieData.map((entry, i) => (
                         <Cell key={i} fill={entry.color} />
                       ))}
